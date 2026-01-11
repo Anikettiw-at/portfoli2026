@@ -2,7 +2,8 @@ import React from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import TypewriterText from "../Components/Typewriter";
 import { NavLink } from "react-router-dom";
-import resume from "../assets/resumeAniket.pdf";
+
+
 
 const Hero = () => {
   return (
@@ -31,11 +32,12 @@ const Hero = () => {
           </button>
         </NavLink>
 
-        <a href={resume} download="Aniket_Tiwari_Resume.pdf">
-          <button className="px-4 py-2 rounded-2xl bg-gray-800 text-white shadow-md hover:bg-gray-900 transition">
-            Download Resume
-          </button>
-        </a>
+     <a href="/Aniket_Tiwari_Resume.pdf" download="Aniket_Tiwari_Resume.pdf">
+  <button className="px-4 py-2 rounded-2xl bg-gray-800 text-white shadow-md hover:bg-gray-900 transition">
+    Download Resume
+  </button>
+</a>
+
       </div>
 
       <div className="mt-8 flex gap-6 text-2xl text-gray-700">
