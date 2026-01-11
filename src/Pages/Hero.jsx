@@ -2,7 +2,7 @@ import React from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import TypewriterText from "../Components/Typewriter";
 import { NavLink } from "react-router-dom";
-import resume from "../assets/resume2026ug2.pdf";
+import resume from "../assets/resumeAniket.pdf";
 
 const Hero = () => {
   return (

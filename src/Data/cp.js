@@ -5,7 +5,7 @@ const handles = {
   codeforces: "At_tiwari078",
   leetcode: "At5602238",
   codechef: "a_tiwari087",
-  atcoder: "At_tiwari078",
+  atcoder: "At_tiw098",
 };
 
 const codeforcesData = async () => {
@@ -62,8 +62,8 @@ export const initStats = async () => {
       link: `https://atcoder.jp/users/${handles.atcoder}`,
       currRank: "8 Kyu",
       maxRank: "8 Kyu",
-      currentRating: 416,
-      maxRating: 416,
+      currentRating: 508,
+      maxRating: 508,
     },
   ];
 };
