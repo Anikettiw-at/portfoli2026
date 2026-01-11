@@ -1,17 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { initStats } from "../Data/cp";
-import Aniket from "../Components/ani";
 
 function CompetitiveProgramming() {
   const [stats, setStats] = useState([]);
 
-  const loadStats = async () => {
-    const data = await initStats();
-    setStats(data);
-  };
-
   useEffect(() => {
-    loadStats();
+    initStats().then(setStats);
   }, []);
 
   return (
@@ -20,73 +14,54 @@ function CompetitiveProgramming() {
         Competitive Programming Profiles
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 mx-auto max-w-6xl">
-        {stats?.map((item, index) => (
-          <div
-            key={index}
-            className="rounded-xl shadow-lg overflow-hidden border border-zinc-700 hover:scale-105 transition-transform duration-300"
-          >
-            <div className="flex items-center gap-4 bg-zinc-800 py-3 px-4 border border-cyan-200 rounded-t-xl">
-              <item.icon className="text-blue-500 text-3xl" />
-              <h2 className="text-2xl font-semibold text-white">
-                {item.Judge}
-              </h2>
-            </div>
-
-            {/* PROFILE IMAGE REMOVED */}
-
-            <div className="p-6">
-              <div className="flex flex-col justify-between text-lg text-cyan-400 font-medium">
-                <div>
-                  <h3 className="mb-2">
-                    <span className="text-orange-400 font-normal">
-                      Handle:
-                    </span>{" "}
-                    <a
-                      className="text-blue-400 underline"
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {item.handle}
-                    </a>
-                  </h3>
-
-                  <p>
-                    <span className="text-white font-normal">
-                      Current Rank:
-                    </span>{" "}
-                    {item.currRank}
-                  </p>
-
-                  <p>
-                    <span className="text-white font-normal">
-                      Maximum Rank:
-                    </span>{" "}
-                    {item.maxRank}
-                  </p>
-                </div>
-
-                <div className="mt-4">
-                  <p>
-                    <span className="text-white font-normal">
-                      Current Rating:
-                    </span>{" "}
-                    {item.currentRating}
-                  </p>
-
-                  <p>
-                    <span className="text-white font-normal">
-                      Maximum Rating:
-                    </span>{" "}
-                    {item.maxRating}
-                  </p>
-                </div>
+      {stats.length === 0 ? (
+        <p className="text-center text-gray-400">
+          Loading profiles...
+        </p>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {stats.map((item, index) => (
+            <div
+              key={index}
+              className="bg-zinc-700 p-6 rounded-xl border border-zinc-600 hover:scale-105 transition"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <item.icon className="text-3xl text-cyan-400" />
+                <h2 className="text-xl font-semibold">
+                  {item.Judge}
+                </h2>
               </div>
+
+              <p>
+                <span className="text-orange-400">Handle:</span>{" "}
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 underline"
+                >
+                  {item.handle}
+                </a>
+              </p>
+
+              <p>
+                <span className="text-orange-400">Current Rating:</span>{" "}
+                {item.currentRating}
+              </p>
+
+              <p>
+                <span className="text-orange-400">Max Rating:</span>{" "}
+                {item.maxRating}
+              </p>
+
+              <p>
+                <span className="text-orange-400">Current Rank:</span>{" "}
+                {item.currRank}
+              </p>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </section>
   );
 }
