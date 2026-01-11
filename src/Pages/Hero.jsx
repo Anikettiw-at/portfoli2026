@@ -31,7 +31,7 @@ const Hero = () => {
           </button>
         </NavLink>
 
-        <a href={resume} download>
+        <a href={resume} download="Aniket_Tiwari_Resume.pdf">
           <button className="px-4 py-2 rounded-2xl bg-gray-800 text-white shadow-md hover:bg-gray-900 transition">
             Download Resume
           </button>
