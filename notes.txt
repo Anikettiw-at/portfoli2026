@@ -1,0 +1,81 @@
+   // A basic project sturucture of a react folder 
+   
+    src/
+    │
+    ├── assets/             # Static files (images, fonts, icons, etc.)
+    │
+    ├── components/         # Reusable UI components (buttons, cards, inputs)
+    │   └── Button/
+    │       ├── Button.tsx
+    │       └── Button.module.css
+    │
+    ├── features/           # Feature-based modules (e.g., Auth, Posts)
+    │   └── auth/
+    │       ├── components/  # Auth-specific components
+    │       ├── pages/       # Pages like Login, Signup
+    │       ├── authSlice.ts # Redux slice / Zustand store
+    │       └── authAPI.ts   # API calls
+    │
+    ├── pages/              # App routes/pages (e.g., Home, About)
+    │   ├── Home.tsx
+    │   └── About.tsx
+    │
+    ├── hooks/              # Custom React hooks
+    │   └── useAuth.ts
+    │
+    ├── layouts/            # Layout components (Navbar, Sidebar, etc.)
+    │
+    ├── services/           # API layer (e.g., Axios instances, API methods)
+    │   └── api.ts
+    │
+    ├── store/              # Global state management (Redux, Zustand)
+    │   └── index.ts
+    │
+    ├── utils/              # Utility functions/helpers
+    │   └── formatDate.ts
+    │
+    ├── App.tsx             # Root component
+    ├── main.tsx            # Entry point (Vite) / index.tsx (CRA)
+    └── vite.config.ts      # Vite config (or use webpack.config.js)
+
+
+
+
+// specific for a portfolio website
+
+
+src/
+│
+├── assets/                 # Static files (images, icons, etc.)
+│   ├── resume
+│   
+│
+├── components/             # Reusable UI components
+│   ├── Navbar.jsx
+│   ├── Footer.jsx
+│   ├── ProjectCard.jsx
+│   └── SectionTitle.jsx
+│
+├── pages/               # Full pages of the portfolio
+│   ├── Hero.jsx
+│   ├── About.jsx
+│   ├── Projects.jsx
+│   ├── Skills.jsx
+│   ├── Experience.jsx
+│   └── Contact.jsx
+│
+├── data/                   # Static data (can be JSON or JS arrays)
+│   ├── projects.js
+│   ├── skills.js
+│   └── experience.js
+│
+├── hooks/                  # Custom hooks if needed (optional)
+│   └── useDarkMode.js
+│
+├── styles/                 # CSS files (global, module, or Tailwind)
+│   ├── global.css
+│   └── animations.css
+│
+├── App.jsx                 # Root component with layout and routing (if any)
+├── main.jsx                # App entry point
+└── vite.config.js          # Or `webpack.config.js` if using CRA
