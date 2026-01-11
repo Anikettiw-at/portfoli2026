@@ -12,6 +12,7 @@ const Navbar = () => {
     { name: "Contact", path: "/Contact" },
   ];
 
+  
   return (
     <div className="flex text-white justify-between items-center w-full h-[70px] px-3 shadow shadow-zinc-700">
       <div className="text-3xl font-bold text-yellow-400">
