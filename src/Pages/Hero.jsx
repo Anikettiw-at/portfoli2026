@@ -32,7 +32,7 @@ const Hero = () => {
           </button>
         </NavLink>
 
-     <a href="/Aniket_Tiwari_Resume.pdf" download="Aniket_Tiwari_Resume.pdf">
+     <a href="/resumeAniket.pdf" download="Aniket_Tiwari_Resume.pdf">
   <button className="px-4 py-2 rounded-2xl bg-gray-800 text-white shadow-md hover:bg-gray-900 transition">
     Download Resume
   </button>
