@@ -8,7 +8,7 @@ const Project = () => {
         "AlgoVerse is a coding-focused platform for learning Data Structures and Algorithms. It includes an admin panel that allows admins to add, update, and manage problems/content, ensuring controlled access and scalable content management.",
       github: "https://github.com/Anikettiw-at/AlgoVerse",
       live: "https://frontend-coding-roan.vercel.app/",
-      date: "2025",
+      date: "June 2025",
       techStack: [
         "MongoDB",
         "Express.js",
@@ -33,7 +33,7 @@ const Project = () => {
         "A full-stack social media application designed to maximize user connection and engagement. Features a robust authentication system (JWT & Bcrypt), personalized user profiles, and seamless multimedia post-sharing via Multer and Cloudinary. Engineered with an interactive UI to support real-time-like social feeds and secure content management.",
       github: "https://github.com/Anikettiw-at/socialmediahm",
       live: "https://socialmediahm.vercel.app/",
-      date: "November 2025",
+      date: "December 2025",
       techStack: [
         "MongoDB",
         "Express.js",
