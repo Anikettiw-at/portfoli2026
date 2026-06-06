@@ -13,7 +13,7 @@ function About() {
           <p>
             I'm{" "}
             <span className="text-green-400 font-semibold">Aniket Tiwari</span>,
-            a third-year B.Tech student at the{" "}
+            a Final-year B.Tech student at the{" "}
             <span className="text-green-400 font-semibold">
               Institute of Engineering and Technology, Lucknow (2023–2027)
             </span>
