@@ -42,6 +42,7 @@ const Project = () => {
         "JWT",
         "Bcrypt",
         "Multer",
+        "datauri/parser",   
         "Cloudinary",
       ],
       tools: ["VS Code", "Postman", "MongoDB Atlas"],
