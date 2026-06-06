@@ -33,7 +33,7 @@ const Project = () => {
         "A full-stack social media application designed to maximize user connection and engagement. Features a robust authentication system (JWT & Bcrypt), personalized user profiles, and seamless multimedia post-sharing via Multer and Cloudinary. Engineered with an interactive UI to support real-time-like social feeds and secure content management.",
       github: "https://github.com/Anikettiw-at/socialmediahm",
       live: "https://socialmediahm.vercel.app/",
-      date: "December 2025",
+      date: "December 2024",
       techStack: [
         "MongoDB",
         "Express.js",
