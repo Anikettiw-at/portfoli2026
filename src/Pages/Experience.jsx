@@ -1,5 +1,5 @@
 import React from 'react';
-import { internshipDetails } from '../data/experience'; // Data file se import kiya
+import { internshipDetails } from '../Data/experience'; 
 
 function Experience() {
   const styles = {
