@@ -6,13 +6,13 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "About", path: "/About" },
     { name: "Education", path: "/Education" },
+    { name: "Experience", path: "/Experience" },
     { name: "Projects", path: "/Projects" },
     { name: "Competitive Programming", path: "/Competitive-Programming" },
     { name: "Skills", path: "/Skills" },
     { name: "Contact", path: "/Contact" },
   ];
 
-  
   return (
     <div className="flex text-white justify-between items-center w-full h-[70px] px-3 shadow shadow-zinc-700">
       <div className="text-3xl font-bold text-yellow-400">

@@ -9,6 +9,7 @@ import Projects from "./Pages/Projects";
 import CompetitiveProgramming from "./Pages/CompetitiveProgramming";
 import Skills from "./Pages/Skills";
 import Contact from "./Pages/Contact";
+import Experience from './Pages/Experience';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Hero />} />
         <Route path="/About" element={<About />} />
         <Route path="/Education" element={<Education />} />
+        <Route path="/Experience" element={<Experience />} />
         <Route path="/Projects" element={<Projects />} />
         <Route
           path="/Competitive-Programming"
