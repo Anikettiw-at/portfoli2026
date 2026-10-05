@@ -1,108 +1,123 @@
-import {
-  FaMapMarkerAlt,
-  FaEnvelope,
-  FaPhoneAlt,
-  FaLinkedin,
-  FaGithub,
-  FaGoogle,
-  FaShareAlt,
-} from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt, FaCopy, FaCheck, FaDownload } from "react-icons/fa";
+import { profile } from "../Data/profile";
+import { socials, EMAIL, RESUME_URL } from "../Data/social";
+import { Page, Card } from "../Components/ui";
 
-const contactItems = [
-  {
-    icon: FaMapMarkerAlt,
-    title: "My Address",
-    details: ["Lucknow, Uttar Pradesh, India"],
-  },
-  {
-    icon: FaEnvelope,
-    title: "Email",
-    details: ["pt5602238@gmail.com", "2300521520009@ietlucknow.ac.in"],
-  },
-  {
-    icon: FaPhoneAlt,
-    title: "Contact",
-    details: ["+91-7607107616"],
-  },
-];
+function CopyEmailButton() {
+  const [copied, setCopied] = useState(false);
 
-const socialIcons = [
-  {
-    icon: FaLinkedin,
-    link: "https://www.linkedin.com/in/aniket-tiwari-51040a294/",
-  },
-  {
-    icon: FaGithub,
-    link: "https://github.com/Anikettiw-at",
-  },
-  {
-    icon: FaGoogle,
-    link: "mailto:pt5602238@gmail.com",
-  },
-];
+  useEffect(() => {
+    if (!copied) return;
+    const t = setTimeout(() => setCopied(false), 2000);
+    return () => clearTimeout(t);
+  }, [copied]);
 
-export default function ContactSection() {
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+      setCopied(true);
+    } catch {
+      window.location.href = `mailto:${EMAIL}`;
+    }
+  };
+
   return (
-    <section className="text-white px-6 py-10">
-      <h2 className="text-xl tracking-widest font-semibold mb-6 border-b border-white/20 w-fit">
-        CONTACT
-      </h2>
+    <button
+      type="button"
+      onClick={copy}
+      className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-5 py-2.5 font-semibold text-white transition hover:bg-white/10"
+    >
+      {copied ? <FaCheck className="text-emerald-400" /> : <FaCopy />}
+      {copied ? "Copied!" : "Copy email"}
+    </button>
+  );
+}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {contactItems.map((item, index) => {
-          const Icon = item.icon;
-          return (
-            <div
-              key={index}
-              className="bg-zinc-700 p-6 rounded-md flex gap-4 items-start hover:scale-105 transition-transform duration-300"
-            >
-              <div className="text-green-400 p-3 rounded-full text-2xl">
-                <Icon />
-              </div>
+export default function Contact() {
+  const items = [
+    {
+      icon: FaEnvelope,
+      title: "Email",
+      lines: profile.emails.map((e) => ({ text: e, href: `mailto:${e}` })),
+    },
+    {
+      icon: FaPhoneAlt,
+      title: "Phone",
+      lines: [{ text: profile.phone, href: `tel:${profile.phone.replace(/-/g, "")}` }],
+    },
+    { icon: FaMapMarkerAlt, title: "Location", lines: [{ text: profile.location }] },
+  ];
 
-              <div>
-                <h3 className="text-orange-400 text-lg font-semibold">
-                  {item.title}
-                </h3>
-                <div className="mt-1 text-md">
-                  {item.details.map((line, i) => (
-                    <div key={i}>{line}</div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          );
-        })}
-
-        {/* Social Profiles */}
-        <div className="bg-zinc-700 p-6 rounded-md flex gap-4 items-start hover:scale-105 transition-transform duration-300">
-          <div className="text-green-400 p-3 rounded-full text-2xl">
-            <FaShareAlt />
-          </div>
-
-          <div>
-            <h3 className="text-orange-400 text-lg font-semibold mb-3">
-              Social Profiles
-            </h3>
-            <div className="flex gap-4">
-              {socialIcons.map((item, i) => {
-                const Icon = item.icon;
-                return (
-                  <a
-                    key={i}
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 rounded-full text-xl hover:text-cyan-400 transition-colors"
-                  >
-                    <Icon />
-                  </a>
-                );
-              })}
-            </div>
-          </div>
+  return (
+    <Page
+      eyebrow="Contact"
+      title="Let’s work together"
+      subtitle="Open to software development and AI engineering roles. The fastest way to reach me is email."
+    >
+      <Card className="mb-8 flex flex-col items-start justify-between gap-5 border-amber-400/20 bg-gradient-to-br from-amber-400/10 to-transparent md:flex-row md:items-center">
+        <div>
+          <p className="text-xl font-bold text-white">Have a role or project in mind?</p>
+          <p className="mt-1 text-zinc-400">I usually reply within a day.</p>
         </div>
+        <div className="flex flex-wrap gap-3">
+          <a
+            href={`mailto:${EMAIL}`}
+            className="inline-flex items-center gap-2 rounded-xl bg-amber-400 px-5 py-2.5 font-semibold text-zinc-950 transition hover:bg-amber-300"
+          >
+            <FaEnvelope /> Email me
+          </a>
+          <CopyEmailButton />
+          <a
+            href={RESUME_URL}
+            download="Aniket_Tiwari_Resume.pdf"
+            className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-5 py-2.5 font-semibold text-white transition hover:bg-white/10"
+          >
+            <FaDownload /> Resume
+          </a>
+        </div>
+      </Card>
+
+      <div className="grid gap-5 md:grid-cols-2">
+        {items.map(({ icon: Icon, title, lines }) => (
+          <Card key={title} className="flex gap-4">
+            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-amber-400/10 text-lg text-amber-400">
+              <Icon />
+            </span>
+            <div className="min-w-0">
+              <h2 className="text-sm uppercase tracking-wider text-zinc-500">{title}</h2>
+              {lines.map(({ text, href }) =>
+                href ? (
+                  <a key={text} href={href} className="block break-all text-zinc-200 transition hover:text-amber-400">
+                    {text}
+                  </a>
+                ) : (
+                  <p key={text} className="text-zinc-200">{text}</p>
+                )
+              )}
+            </div>
+          </Card>
+        ))}
+
+        <Card className="flex gap-4">
+          <div>
+            <h2 className="text-sm uppercase tracking-wider text-zinc-500">Find me online</h2>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {socials.map(({ name, icon: Icon, href }) => (
+                <a
+                  key={name}
+                  href={href}
+                  target={href.startsWith("mailto:") ? undefined : "_blank"}
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg border border-white/10 px-3 py-2 text-sm text-zinc-300 transition hover:border-amber-400/40 hover:text-amber-400"
+                >
+                  <Icon /> {name}
+                </a>
+              ))}
+            </div>
+          </div>
+        </Card>
       </div>
-    </section>
+    </Page>
   );
 }

@@ -1,0 +1,7 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "portfolio", "runtimeExecutable": "npm", "runtimeArgs": ["run", "dev", "--", "--port", "5173"], "port": 5173 },
+    { "name": "documind", "runtimeExecutable": "C:/Users/pt560/OneDrive/Desktop/webdevelopment/documind-ai/.venv/Scripts/python.exe", "runtimeArgs": ["-m", "streamlit", "run", "C:/Users/pt560/OneDrive/Desktop/webdevelopment/documind-ai/app.py", "--server.port", "8501", "--server.headless", "true", "--browser.gatherUsageStats", "false"], "port": 8501 }
+  ]
+}

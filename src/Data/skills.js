@@ -1,0 +1,107 @@
+import {
+  SiCplusplus,
+  SiC,
+  SiJavascript,
+  SiTypescript,
+  SiHtml5,
+  SiCss3,
+  SiNextdotjs,
+  SiReact,
+  SiNodedotjs,
+  SiExpress,
+  SiSupabase,
+  SiSocketdotio,
+  SiJsonwebtokens,
+  SiPostgresql,
+  SiMongodb,
+  SiRedis,
+  SiMysql,
+  SiGit,
+  SiGithub,
+  SiPostman,
+  SiClickup,
+  SiCloudinary,
+  SiGooglegemini,
+  SiElevenlabs,
+  SiWebrtc,
+  SiVercel,
+  SiTailwindcss,
+} from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
+import { FaRobot, FaPhoneAlt, FaCogs, FaProjectDiagram, FaServer, FaPlug, FaCode, FaDatabase, FaNetworkWired, FaCubes } from "react-icons/fa";
+import { MdRecordVoiceOver } from "react-icons/md";
+
+export const skillGroups = [
+  {
+    category: "AI & Automation",
+    items: [
+      { name: "Generative AI", icon: FaRobot, color: "text-violet-400" },
+      { name: "Gemini API", icon: SiGooglegemini, color: "text-sky-400" },
+      { name: "OpenRouter LLMs", icon: FaPlug, color: "text-indigo-300" },
+      { name: "Vapi Voice Agents", icon: MdRecordVoiceOver, color: "text-teal-300" },
+      { name: "ElevenLabs", icon: SiElevenlabs, color: "text-zinc-100" },
+      { name: "Telnyx", icon: FaPhoneAlt, color: "text-emerald-400" },
+      { name: "WebRTC", icon: SiWebrtc, color: "text-zinc-100" },
+      { name: "Workflow Automation", icon: FaCogs, color: "text-amber-300" },
+    ],
+  },
+  {
+    category: "Frameworks & Backend",
+    items: [
+      { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
+      { name: "React.js", icon: SiReact, color: "text-cyan-400" },
+      { name: "Node.js", icon: SiNodedotjs, color: "text-green-500" },
+      { name: "Express.js", icon: SiExpress, color: "text-zinc-300" },
+      { name: "REST APIs", icon: FaServer, color: "text-sky-300" },
+      { name: "Microservices", icon: FaCubes, color: "text-orange-300" },
+      { name: "WebSockets / Socket.io", icon: SiSocketdotio, color: "text-zinc-100" },
+      { name: "Webhooks", icon: FaProjectDiagram, color: "text-pink-300" },
+      { name: "JWT", icon: SiJsonwebtokens, color: "text-fuchsia-400" },
+      { name: "Supabase", icon: SiSupabase, color: "text-emerald-400" },
+      { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-teal-400" },
+    ],
+  },
+  {
+    category: "Languages",
+    items: [
+      { name: "C++ (Advanced)", icon: SiCplusplus, color: "text-blue-400" },
+      { name: "C", icon: SiC, color: "text-blue-300" },
+      { name: "JavaScript (ES6+)", icon: SiJavascript, color: "text-yellow-400" },
+      { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
+      { name: "SQL", icon: FaDatabase, color: "text-sky-300" },
+      { name: "HTML5", icon: SiHtml5, color: "text-orange-500" },
+      { name: "CSS3", icon: SiCss3, color: "text-blue-500" },
+    ],
+  },
+  {
+    category: "Databases",
+    items: [
+      { name: "PostgreSQL", icon: SiPostgresql, color: "text-sky-400" },
+      { name: "MongoDB", icon: SiMongodb, color: "text-green-500" },
+      { name: "Redis", icon: SiRedis, color: "text-red-500" },
+      { name: "MySQL", icon: SiMysql, color: "text-blue-400" },
+    ],
+  },
+  {
+    category: "Developer Tools",
+    items: [
+      { name: "Git", icon: SiGit, color: "text-orange-500" },
+      { name: "GitHub", icon: SiGithub, color: "text-white" },
+      { name: "Postman", icon: SiPostman, color: "text-orange-500" },
+      { name: "VS Code", icon: VscVscode, color: "text-blue-400" },
+      { name: "ClickUp", icon: SiClickup, color: "text-purple-400" },
+      { name: "Cloudinary", icon: SiCloudinary, color: "text-blue-300" },
+      { name: "Judge0", icon: FaCode, color: "text-lime-300" },
+      { name: "Vercel", icon: SiVercel, color: "text-white" },
+    ],
+  },
+  {
+    category: "Core Competencies",
+    items: [
+      { name: "Data Structures & Algorithms", icon: FaProjectDiagram, color: "text-amber-400" },
+      { name: "OOP", icon: FaCubes, color: "text-cyan-300" },
+      { name: "DBMS", icon: FaDatabase, color: "text-emerald-300" },
+      { name: "Computer Networks", icon: FaNetworkWired, color: "text-sky-300" },
+    ],
+  },
+];

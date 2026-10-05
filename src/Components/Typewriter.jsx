@@ -1,43 +1,50 @@
 import { useEffect, useState } from "react";
 
-const TypewriterText = () => {
-  const phrases = [
-    "a Developer",
-    "a Competitive Programmer",
-    "a Problem Solver",
-    "a Tech Enthusiast",
-  ];
+const PHRASES = [
+  "an AI Developer",
+  "a Full-Stack Engineer",
+  "a Voice-AI Builder",
+  "a Competitive Programmer",
+];
 
-  const [phraseIndex, setPhraseIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
+const TypewriterText = ({ phrases = PHRASES }) => {
+  const [index, setIndex] = useState(0);
   const [text, setText] = useState("");
+  const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
-    const currentPhrase = phrases[phraseIndex];
-    const typingSpeed = 100;
+    const full = phrases[index];
+    const finishedTyping = !deleting && text === full;
+    const finishedDeleting = deleting && text === "";
+
+    let delay = deleting ? 45 : 95;
+    if (finishedTyping) delay = 1600;
+    if (finishedDeleting) delay = 300;
 
     const timeout = setTimeout(() => {
-      setText(currentPhrase.slice(0, charIndex + 1));
-      setCharIndex((prev) => prev + 1);
-    }, typingSpeed);
-
-    if (charIndex === currentPhrase.length) {
-      clearTimeout(timeout);
-      setTimeout(() => {
-        setCharIndex(0);
-        setPhraseIndex((prev) => (prev + 1) % phrases.length);
-        setText("");
-      }, 1500);
-    }
+      if (finishedTyping) {
+        setDeleting(true);
+      } else if (finishedDeleting) {
+        setDeleting(false);
+        setIndex((i) => (i + 1) % phrases.length);
+      } else {
+        setText(full.slice(0, text.length + (deleting ? -1 : 1)));
+      }
+    }, delay);
 
     return () => clearTimeout(timeout);
-  }, [charIndex, phraseIndex]);
+  }, [text, deleting, index, phrases]);
 
   return (
-    <h1 className="text-3xl font-semibold">
-      I’m <span className="text-cyan-400">{text}</span>
-      <span className="animate-blink">|</span>
-    </h1>
+    <p
+      className="h-10 text-2xl font-semibold text-zinc-300 sm:text-3xl"
+      aria-label={`I'm ${phrases.join(", ")}`}
+    >
+      <span aria-hidden="true">
+        I’m <span className="text-cyan-400">{text}</span>
+        <span className="ml-0.5 animate-blink text-amber-400">|</span>
+      </span>
+    </p>
   );
 };
 
