@@ -46,6 +46,40 @@ export const projects = [
     note: "Private internal company system — source code and live app are not public.",
   },
   {
+    name: "Moodline",
+    subtitle: "Emotion Detection & Sentiment Analysis",
+    categories: ["AI"],
+    date: "Jul 2026",
+    description:
+      "A deep learning NLP text classifier that detects one of six emotions in a sentence, served through a FastAPI REST API and deployed on Render.",
+    points: [
+      {
+        title: "Model Development",
+        text: "Stacked Bidirectional GRU classifying text into 6 emotions with 92.1% test accuracy.",
+      },
+      {
+        title: "NLP Pipeline",
+        text: "Tokenized 16K sentences; beat RNN, LSTM and GRU baselines using class weights and early stopping.",
+      },
+      {
+        title: "Deployment",
+        text: "Served via a FastAPI REST API with tf.function for 9x faster inference; deployed on Render.",
+      },
+    ],
+    techStack: [
+      "Python",
+      "TensorFlow",
+      "Keras",
+      "FastAPI",
+      "Scikit-learn",
+      "Pandas",
+      "Render",
+    ],
+    github:
+      "https://github.com/Anikettiw-at/Deep-Learning-based-Sentiment-Analysis-Emotion-Detection-System",
+    live: "https://deep-learning-based-sentiment-analysis.onrender.com/",
+  },
+  {
     name: "Connectify",
     subtitle: "AI-Powered Social Media Platform",
     categories: ["AI", "Full-Stack"],
