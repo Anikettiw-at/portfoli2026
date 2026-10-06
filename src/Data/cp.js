@@ -57,8 +57,6 @@ export function buildProfiles(cfUser) {
       icon: SiLeetcode,
       handle: handles.leetcode,
       link: `https://leetcode.com/u/${handles.leetcode}/`,
-      rank: "Knight",
-      rankColor: "text-amber-400",
       maxRating: 1790,
     },
     {

@@ -42,7 +42,7 @@ function CompetitiveProgramming() {
             <p className="mt-5 text-xs uppercase tracking-wider text-zinc-500">Max rating</p>
             <p className="text-4xl font-extrabold text-white">{maxRating}</p>
 
-            <p className={`mt-1 font-semibold ${rankColor}`}>{rank}</p>
+            {rank && <p className={`mt-1 font-semibold ${rankColor}`}>{rank}</p>}
 
             <div className="mt-4 flex items-center justify-between border-t border-white/10 pt-3 text-xs text-zinc-500">
               <span className="truncate">@{handle}</span>
