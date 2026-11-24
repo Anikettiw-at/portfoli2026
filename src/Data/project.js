@@ -2,6 +2,53 @@ export const projectCategories = ["All", "AI", "Work", "Full-Stack"];
 
 export const projects = [
   {
+    name: "InkVerse",
+    subtitle: "Comics & Web-Novel Platform with Payments and Live Chat",
+    categories: ["Full-Stack"],
+    date: "Nov 2026",
+    description:
+      "A platform where readers read comics and web novels and chat in live moderated channels, and creators publish chapters, sell early access for coins and request payouts. Includes a full payment gateway, an admin moderation console and a creator analytics studio.",
+    points: [
+      {
+        title: "Payment Gateway",
+        text: "Unified order pipeline for Razorpay (UPI, cards, netbanking) and Stripe with server-side pricing, HMAC-verified signatures and webhooks, exactly-once crediting, coupons, refunds, receipts and a revenue report.",
+      },
+      {
+        title: "Real-Time Moderated Chat",
+        text: "WebSocket channels with spoiler tags, a profanity filter, rate limits, a strike → mute → ban ladder, report queue with auto-hide, appeals and an audit log.",
+      },
+      {
+        title: "Creator Economy",
+        text: "Scheduled chapter releases, early-access unlocks with a 70% creator revenue share, tips, a 14-day earnings hold, payout requests, referrals and 30-day analytics with CSV export.",
+      },
+      {
+        title: "Try the Live Demo",
+        text: "Log in as ReaderRay / Reader123! (reader) or NovaInk / Creator123! (creator). Payments run in sandbox mode; demo data resets periodically.",
+      },
+    ],
+    images: [
+      {
+        src: "/inkverse/home.jpg",
+        caption:
+          "Live home page: trending carousel, shelves of comics and web novels, live chat channels and the coin wallet in the top bar.",
+      },
+    ],
+    techStack: [
+      "Node.js",
+      "Express.js",
+      "SQLite",
+      "WebSockets",
+      "Razorpay",
+      "Stripe",
+      "JWT",
+      "Bcrypt",
+      "PWA",
+      "Render",
+    ],
+    github: "https://github.com/Anikettiw-at/Inkverse",
+    live: "https://inkverse-eaiu.onrender.com/",
+  },
+  {
     name: "Unified AI Communication Platform",
     subtitle: "Enterprise VoIP & AI Voice Agent System",
     badge: "Work · EcoSave Home Solutions",
